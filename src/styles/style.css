@@ -63,7 +63,3 @@
 .keyboard__key-active:after {
   background: #f5edb1;
 }
-
-.keyboard__key-dark {
-  background: rgba(139, 112, 179, 0.3);
-}
