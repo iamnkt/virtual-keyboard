@@ -17,7 +17,7 @@ class Keys {
 
     keyLayout.forEach(key => {
       const keyElement = document.createElement('button');
-      const lineBreak = ['backspace', 'del', 'enter', 'shiftRight', 'ctrlRight'].indexOf(key) !== -1;
+      const insertLineBreak = ['backspace', 'del', 'enter', 'shiftRight', 'ctrlRight'].indexOf(key) !== -1;
 
       keyElement.setAttribute('type', 'button');
       keyElement.classList.add('keyboard__key');
@@ -98,7 +98,7 @@ class Keys {
 
       fragment.appendChild(keyElement);
 
-      if (lineBreak) {
+      if (insertLineBreak) {
         fragment.appendChild(document.createElement('br'));
       };
     });
