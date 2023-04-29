@@ -1,9 +1,9 @@
 import '../styles/style.css';
 
-class Keys {
+class Layout {
   createKeys() {
-    const fragment = document.createDocumentFragment();
-    const keyLayout = [
+    const FRAGMENT = document.createDocumentFragment();
+    const KEY_LAYOUT = [
       '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
       'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'del',
       'caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', 'enter',
@@ -15,7 +15,7 @@ class Keys {
       return `<span class="material-icons">${name}</span>`;
     };
 
-    keyLayout.forEach(key => {
+    KEY_LAYOUT.forEach(key => {
       const keyElement = document.createElement('button');
       const insertLineBreak = ['backspace', 'del', 'enter', 'shiftRight', 'ctrlRight'].indexOf(key) !== -1;
 
@@ -96,15 +96,15 @@ class Keys {
         keyElement.textContent = 'Ctrl';
       };
 
-      fragment.appendChild(keyElement);
+      FRAGMENT.appendChild(keyElement);
 
       if (insertLineBreak) {
-        fragment.appendChild(document.createElement('br'));
+        FRAGMENT.appendChild(document.createElement('br'));
       };
     });
 
-    return fragment;
+    return FRAGMENT;
   }
 }
 
-export default Keys;
+export default Layout;

@@ -1,18 +1,18 @@
-  import Keyboard from './keyboard';
-  import Keys from './keys';
-  import Model from './model';
+import Page from './page';
+import Layout from './layout';
+import Model from './model';
 
 class App {
   constructor() {
-    this.keyboard = new Keyboard();
-    this.keys = new Keys();
+    this.page = new Page();
+    this.layout = new Layout();
     this.model = new Model();
   }
 
   run() {
-    this.keyboard.createKeyboard();
-    document.querySelector('.keyboard__keys').appendChild(this.keys.createKeys());
-    this.model.work();
+    this.page.createPage();
+    document.querySelector('.keyboard__keys').appendChild(this.layout.createKeys());
+    this.model.init();
   }
 }
 

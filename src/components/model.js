@@ -6,20 +6,20 @@ class Model {
 
   toggleCaps() {
     this.capsLock = !this.capsLock;
-    const keys = Array.from(document.querySelectorAll('.keyboard__key'));
+    const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
 
-    for (let key of keys) {
+    for (let key of KEYS) {
       if (key.textContent.length === 1) {
         key.textContent = this.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
       };
     };
   }
 
-  work() {
-    const keys = Array.from(document.querySelectorAll('.keyboard__key'));
-    const tArea = document.querySelector('.t_area');
+  init() {
+    const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
+    const T_AREA = document.querySelector('.t_area');
     // console.log(keys);
-    keys.forEach((key) => {
+    KEYS.forEach((key) => {
       key.addEventListener('click', () => {
         const caps = document.querySelector('.keyboard__key-activatable');
         let value = key.textContent.toLowerCase();
@@ -40,7 +40,8 @@ class Model {
         } else {
           this.str += this.capsLock ? value.toUpperCase() : value;
         }
-        tArea.textContent = this.str;
+
+        T_AREA.textContent = this.str;
       });
     });
 
