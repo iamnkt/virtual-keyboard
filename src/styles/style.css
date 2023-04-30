@@ -59,9 +59,9 @@ body {
   background: rgba(139, 112, 179, 0.6);
 }
 
-.keyboard__key:active {
+/* .keyboard__key:active {
   background: #c18b48d7;
-}
+} */
 
 .keyboard__key.active {
   background: #c18b48d7;

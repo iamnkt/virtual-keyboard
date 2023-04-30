@@ -1,3 +1,27 @@
+const ALT_LAYOUT = {
+  '`': '~',
+  '1': '!',
+  '2': '@',
+  '3': '#',
+  '4': '$',
+  '5': '%',
+  '6': '^',
+  '7': '&',
+  '8': '*',
+  '9': '(',
+  '0': ')',
+  '_': '-',
+  '+': '=',
+  '[': '{',
+  ']': '}',
+  '\\': '|',
+  ';': ':',
+  '\'': '\"',
+  ',': '<',
+  '.': '>',
+  '/': '?',
+};
+
 class Model {
   constructor() {
     this.str = '';
@@ -13,12 +37,39 @@ class Model {
         key.textContent = this.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
       };
     };
+  };
+
+  pressShift() {
+    const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
+
+    KEYS.forEach((key) => {
+      for (let k in ALT_LAYOUT) {
+        if (key.textContent === k) {
+          key.textContent = ALT_LAYOUT[k];
+        }
+      }
+    });
+  }
+
+  unpressShift() {
+    const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
+
+    KEYS.forEach((key) => {
+      for (let k in ALT_LAYOUT) {
+        if (key.textContent === ALT_LAYOUT[k]) {
+          key.textContent = k;
+        }
+      }
+    });
   }
 
   init() {
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
     const T_AREA = document.querySelector('.t_area');
-    let cursorPos = T_AREA.selectionStart;
+    const ARROW_LEFT = document.createTextNode('\u2190');
+    const ARROW_RIGHT = document.createTextNode('\u2192');
+    const ARROW_UP = document.createTextNode('\u2191');
+    const ARROW_DOWN = document.createTextNode('\u2193');
 
     // T_AREA.addEventListener('input', (e) => {
     //   console.log(e);
@@ -27,48 +78,59 @@ class Model {
     // });
 
     KEYS.forEach((key) => {
-      key.addEventListener('click', () => {
-        const caps = document.querySelector('.keyboard__key-activatable');
+      key.addEventListener('mousedown', () => {
+        const CAPS = document.querySelector('.keyboard__key-activatable');
         let value = key.textContent.toLowerCase();
-        let arrowLeft = document.createTextNode('\u2190');
-        let arrowRight = document.createTextNode('\u2192');
-        let arrowUp = document.createTextNode('\u2191');
-        let arrowDown = document.createTextNode('\u2193');
+        let cursorPos = T_AREA.selectionStart;
+        let str_1;
+        let str_2;
+        T_AREA.focus();
 
         switch (value) {
           case 'backspace':
-            if (T_AREA.selectionStart) {
-              let str1 = this.str.slice(0, T_AREA.selectionStart - 1);
-              let str2 = this.str.slice(T_AREA.selectionStart);
-              this.str = str1 + str2;
-              T_AREA.focus();
-              cursorPos -= 1;
-              console.log(T_AREA.selectionStart)
-            } else this.str = this.str.slice(0, this.str.length - 1);
+            if (cursorPos === 0) break;
+            str_1 = this.str.slice(0, cursorPos - 1);
+            str_2 = this.str.slice(cursorPos);
+            this.str = str_1 + str_2;
+            cursorPos -= 1;
             break;
 
           case 'tab':
-            this.str += '    ';
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos);
+            this.str = str_1 + '    ' + str_2;
+            cursorPos += 4;
             break;
 
           case 'del':
-            
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos + 1);
+            this.str = str_1 + str_2;
             break;
 
           case 'keyboard_capslock':
             this.toggleCaps();
-            caps.classList.toggle('keyboard__key-active', this.capsLock);
+            CAPS.classList.add('keyboard__key-active');
             break;
 
           case 'enter':
-            this.str += '\n';
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos);
+            this.str = str_1 + '\n' + str_2;
+            cursorPos = str_1.length + 1;
             break;
 
           case '':
-            this.str += ' ';
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos);
+            this.str = str_1 + ' ' + str_2;
+            cursorPos += 1;
             break;
 
           case 'shift':
+            this.toggleCaps();
+            CAPS.classList.toggle('keyboard__key-active', this.capsLock);
+            this.pressShift();
             break;
 
           case 'ctrl':
@@ -81,42 +143,75 @@ class Model {
             break;
 
           case 'keyboard_arrow_up':
-            this.str += arrowUp.textContent;
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos);
+            this.str = str_1 + ARROW_UP.textContent + str_2;
+            cursorPos += 1;
             break;
-          
+
           case 'keyboard_arrow_left':
-            this.str += arrowLeft.textContent;
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos);
+            this.str = str_1 + ARROW_LEFT.textContent + str_2;
+            cursorPos += 1;
             break;
 
           case 'keyboard_arrow_down':
-            this.str += arrowDown.textContent;
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos);
+            this.str = str_1 + ARROW_DOWN.textContent + str_2;
+            cursorPos += 1;
             break;
 
           case 'keyboard_arrow_right':
-            this.str += arrowRight.textContent;
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos);
+            this.str = str_1 + ARROW_RIGHT.textContent + str_2;
+            cursorPos += 1;
             break;
 
           default:
-            this.str += this.capsLock ? value.toUpperCase() : value;
+            str_1 = this.str.slice(0, cursorPos);
+            str_2 = this.str.slice(cursorPos);
+            if (this.capsLock) {
+              this.str = str_1 + value.toUpperCase() + str_2;
+            } else {
+              this.str = str_1 + value + str_2;
+            }
+            cursorPos += 1;
         }
-        
+
+        key.classList.add('active');
         T_AREA.value = this.str;
         T_AREA.selectionStart = T_AREA.selectionEnd = cursorPos;
       });
     });
 
+    document.addEventListener('mouseup', (e) => {
+      const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
+      KEYS.forEach((key) => {
+        if (key.classList.contains('active')) {
+          key.classList.remove('active');
+        }
+      });
+      if (e.target.textContent === 'Shift') {
+        this.toggleCaps();
+        document.querySelector('.keyboard__key-activatable').classList.remove('keyboard__key-active', this.capsLock);
+        this.unpressShift();
+      }
+    });
+
     document.addEventListener('keydown', (e) => {
-      // T_AREA.focus();
       KEYS.forEach((key) => {
         if (e.key === key.textContent) {
           key.classList.add('active');
         }
       });
+
       this.str = T_AREA.value;
     });
 
     document.addEventListener('keyup', (e) => {
-      // T_AREA.focus();
       KEYS.forEach((key) => {
         if (e.key === key.textContent) {
           key.classList.remove('active');
