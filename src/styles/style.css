@@ -14,7 +14,7 @@ body {
   height: 300px;
   outline: none;
   border: 1px solid #999;
-  padding: 5px;
+  padding: 10px;
   resize: none;
   font-size: 16px;
 }
@@ -60,6 +60,10 @@ body {
 }
 
 .keyboard__key:active {
+  background: #c18b48d7;
+}
+
+.keyboard__key.active {
   background: #c18b48d7;
 }
 
