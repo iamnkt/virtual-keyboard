@@ -200,6 +200,14 @@ class Model {
     this.en = true;
   }
 
+  setLang() {
+    if (this.en) {
+      localStorage.setItem('lang', 'eng');
+    } else {
+      localStorage.setItem('lang', 'ru');
+    }
+  }
+
   toggleCaps() {
     this.capsLock = !this.capsLock;
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
@@ -304,12 +312,24 @@ class Model {
   }
 
   init() {
+    const LANG = localStorage.getItem('lang');
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
     const T_AREA = document.querySelector('.t_area');
     const ARROW_LEFT = document.createTextNode('\u2190');
     const ARROW_RIGHT = document.createTextNode('\u2192');
     const ARROW_UP = document.createTextNode('\u2191');
     const ARROW_DOWN = document.createTextNode('\u2193');
+
+    if (LANG === 'ru') {
+      console.log(LANG)
+      KEYS.forEach((key) => {
+        for (let k in EN_LAYOUT) {
+          if (key.textContent === EN_LAYOUT[k]) {
+            key.textContent = RU_LAYOUT[k];
+          }
+        }
+      });
+    } 
 
     KEYS.forEach((key) => {
       key.addEventListener('mousedown', () => {
@@ -744,6 +764,7 @@ class Model {
         if (ARR_KEYS.includes('ControlLeft') && ARR_KEYS.includes('AltLeft')) {
           this.changeLang();
           this.en = !this.en;
+          this.setLang();
         };
       };
 
