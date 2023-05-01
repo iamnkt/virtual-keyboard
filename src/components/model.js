@@ -10,8 +10,8 @@ const ALT_LAYOUT = {
   '8': '*',
   '9': '(',
   '0': ')',
-  '_': '-',
-  '+': '=',
+  '-': '_',
+  '=': '+',
   '[': '{',
   ']': '}',
   '\\': '|',
@@ -110,7 +110,7 @@ class Model {
 
           case 'keyboard_capslock':
             this.toggleCaps();
-            CAPS.classList.add('keyboard__key-active');
+            CAPS.classList.toggle('keyboard__key-active');
             break;
 
           case 'enter':
@@ -202,21 +202,44 @@ class Model {
     });
 
     document.addEventListener('keydown', (e) => {
+      T_AREA.focus();
+
       KEYS.forEach((key) => {
-        if (e.key === key.textContent) {
+        if (e.key.toLowerCase() === key.textContent.toLowerCase()) {
           key.classList.add('active');
         }
       });
 
-      this.str = T_AREA.value;
+      if (e.key === 'Tab') {
+        T_AREA.value += '    ';
+      } else if (e.key === 'CapsLock') {
+        // event.preventDefault();
+        console.log('Caps pressed')
+        this.toggleCaps();
+        document.querySelector('.keyboard__key-activatable').classList.toggle('keyboard__key-active');
+      } else if (e.key === 'Shift') {
+        this.toggleCaps();
+        document.querySelector('.keyboard__key-activatable').classList.toggle('keyboard__key-active', this.capsLock);
+        this.pressShift();
+      }
     });
 
     document.addEventListener('keyup', (e) => {
+      T_AREA.focus();
+
       KEYS.forEach((key) => {
-        if (e.key === key.textContent) {
+        if (e.key.toLowerCase() === key.textContent.toLowerCase()) {
           key.classList.remove('active');
         }
       });
+
+      if (e.key === 'Shift') {
+        this.toggleCaps();
+        document.querySelector('.keyboard__key-activatable').classList.remove('keyboard__key-active', this.capsLock);
+        this.unpressShift();
+      }
+
+      this.str = T_AREA.value;
     });
   }
 }
