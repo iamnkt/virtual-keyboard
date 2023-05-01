@@ -1,4 +1,128 @@
-const ALT_LAYOUT = {
+const RU_LAYOUT = {
+  'Backquote': 'ё',
+  'Digit1': '1',
+  'Digit2': '2',
+  'Digit3': '3',
+  'Digit4': '4',
+  'Digit5': '5',
+  'Digit6': '6',
+  'Digit7': '7',
+  'Digit8': '8',
+  'Digit9': '9',
+  'Digit0': '0',
+  'Minus': '-',
+  'Equal': '=',
+  'KeyQ': 'й',
+  'KeyW': 'ц',
+  'KeyE': 'у',
+  'KeyR': 'к',
+  'KeyT': 'е',
+  'KeyY': 'н',
+  'KeyU': 'г',
+  'KeyI': 'ш',
+  'KeyO': 'щ',
+  'KeyP': 'з',
+  'BracketLeft': 'х',
+  'BracketRight': 'ъ',
+  'Backslash': '\\',
+  'KeyA': 'ф',
+  'KeyS': 'ы',
+  'KeyD': 'в',
+  'KeyF': 'а',
+  'KeyG': 'п',
+  'KeyH': 'р',
+  'KeyJ': 'о',
+  'KeyK': 'л',
+  'KeyL': 'д',
+  'Semicolon': 'ж',
+  'Quote': 'э',
+  'KeyZ': 'я',
+  'KeyX': 'ч',
+  'KeyC': 'с',
+  'KeyV': 'м',
+  'KeyB': 'и',
+  'KeyN': 'т',
+  'KeyM': 'ь',
+  'Comma': 'б',
+  'Period': 'ю',
+  'Slash': '.',
+}
+
+const EN_LAYOUT = {
+  'Backquote': '`',
+  'Digit1': '1',
+  'Digit2': '2',
+  'Digit3': '3',
+  'Digit4': '4',
+  'Digit5': '5',
+  'Digit6': '6',
+  'Digit7': '7',
+  'Digit8': '8',
+  'Digit9': '9',
+  'Digit0': '0',
+  'Minus': '-',
+  'Equal': '=',
+  'KeyQ': 'q',
+  'KeyW': 'w',
+  'KeyE': 'e',
+  'KeyR': 'r',
+  'KeyT': 't',
+  'KeyY': 'y',
+  'KeyU': 'u',
+  'KeyI': 'i',
+  'KeyO': 'o',
+  'KeyP': 'p',
+  'BracketLeft': '[',
+  'BracketRight': ']',
+  'Backslash': '\\',
+  'KeyA': 'a',
+  'KeyS': 's',
+  'KeyD': 'd',
+  'KeyF': 'f',
+  'KeyG': 'g',
+  'KeyH': 'h',
+  'KeyJ': 'j',
+  'KeyK': 'k',
+  'KeyL': 'l',
+  'Semicolon': ';',
+  'Quote': '\'',
+  'KeyZ': 'z',
+  'KeyX': 'x',
+  'KeyC': 'c',
+  'KeyV': 'v',
+  'KeyB': 'b',
+  'KeyN': 'n',
+  'KeyM': 'm',
+  'Comma': ',',
+  'Period': '.',
+  'Slash': '/',
+}
+
+const EN_SHIFT_LAYOUT = {
+  'Backquote': '~',
+  'Digit1': '!',
+  'Digit2': '@',
+  'Digit3': '#',
+  'Digit4': '$',
+  'Digit5': '%',
+  'Digit6': '^',
+  'Digit7': '&',
+  'Digit8': '*',
+  'Digit9': '(',
+  'Digit0': ')',
+  'Minus': '_',
+  'Equal': '+',
+  'BracketLeft': '{',
+  'BracketRight': '}',
+  'Backslash': '|',
+  'Semicolon': ':',
+  'Quote': '\"',
+  'Comma': '<',
+  'Period': '>',
+  'Slash': '?',
+};
+
+const EN_ALT_LAYOUT = {
   '`': '~',
   '1': '!',
   '2': '@',
@@ -22,43 +146,6 @@ const ALT_LAYOUT = {
   '/': '?',
 };
 
-const RU_LAYOUT = {
-  '`': 'ё',
-  'q': 'й',
-  'w': 'ц',
-  'e': 'у',
-  'r': 'к',
-  't': 'е',
-  'y': 'н',
-  'u': 'г',
-  'i': 'ш',
-  'o': 'щ',
-  'p': 'з',
-  '[': 'х',
-  ']': 'ъ',
-  'a': 'ф',
-  's': 'ы',
-  'd': 'в',
-  'f': 'а',
-  'g': 'п',
-  'h': 'р',
-  'j': 'о',
-  'k': 'л',
-  'l': 'д',
-  ';': 'ж',
-  '\'': 'э',
-  'z': 'я',
-  'x': 'ч',
-  'c': 'с',
-  'v': 'м',
-  'b': 'и',
-  'n': 'т',
-  'm': 'ь',
-  ',': 'б',
-  '.': 'ю',
-  '/': '.',
-}
-
 const RU_ALT_LAYOUT = {
   '1': '!',
   '2': '"',
@@ -76,29 +163,30 @@ const RU_ALT_LAYOUT = {
   '.': ',',
 };
 
-const RU_SHIFT_ALT_LAYOUT = {
-  '!': '!',
-  '%': '%',
-  '*': '*',
-  "(": '(',
-  ')': ')',
-  '_': '_',
-  '+': '+',
-  '~': 'Ё',
-  '@': '"',
-  '#': '№',
-  '$': ';',
-  '5': '%',
-  '^': ':',
-  '&': '?',
-  '{': 'Х',
-  '}': 'Ъ',
-  '|': '/',
-  ':': 'Ж',
-  '"': 'Э',
-  '<': 'Б',
-  '>': 'Ю',
-  '?': ',',
+const RU_SHIFT_LAYOUT = {
+  'Backquote': 'Ё',
+  'Digit1': '!',
+  'Digit2': '"',
+  'Digit3': '№',
+  'Digit4': ';',
+  'Digit5': '%',
+  'Digit6': ':',
+  'Digit7': '?',
+  'Digit8': '*',
+  'Digit9': '(',
+  'Digit8': '*',
+  'Digit9': '(',
+  'Digit0': ')',
+  'Minus': '_',
+  'Equal': '+',
+  'BracketLeft': 'Х',
+  'BracketRight': 'Ъ',
+  'Backslash': '/',
+  'Semicolon': 'Ж',
+  'Quote': 'Э',
+  'Comma': 'Б',
+  'Period': 'Ю',
+  'Slash': ',',
 };
 
 const ARR_KEYS = [];
@@ -107,6 +195,7 @@ class Model {
   constructor() {
     this.str = '';
     this.capsLock = false;
+    this.shift = false;
     this.allowed = true;
     this.en = true;
   }
@@ -127,9 +216,9 @@ class Model {
 
     if (this.en) {
       KEYS.forEach((key) => {
-        for (let k in ALT_LAYOUT) {
+        for (let k in EN_ALT_LAYOUT) {
           if (key.textContent === k) {
-            key.textContent = ALT_LAYOUT[k];
+            key.textContent = EN_ALT_LAYOUT[k];
           }
         }
       });
@@ -142,6 +231,8 @@ class Model {
         }
       });
     }
+
+    this.shift = true;
   }
 
   unpressShift() {
@@ -149,8 +240,8 @@ class Model {
     
     if (this.en) {
       KEYS.forEach((key) => {
-        for (let k in ALT_LAYOUT) {
-          if (key.textContent === ALT_LAYOUT[k]) {
+        for (let k in EN_ALT_LAYOUT) {
+          if (key.textContent === EN_ALT_LAYOUT[k]) {
             key.textContent = k;
           }
         }
@@ -165,6 +256,7 @@ class Model {
       });
     }
 
+    this.shift = false;
   }
 
   changeLang() {
@@ -173,16 +265,16 @@ class Model {
     if (this.en) {
       if (this.capsLock) {
         KEYS.forEach((key) => {
-          for (let k in RU_LAYOUT) {
-            if (key.textContent.toLowerCase() === k) {
+          for (let k in EN_LAYOUT) {
+            if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
               key.textContent = RU_LAYOUT[k].toUpperCase();
             }
           }
         });
       } else {
         KEYS.forEach((key) => {
-          for (let k in RU_LAYOUT) {
-            if (key.textContent === k) {
+          for (let k in EN_LAYOUT) {
+            if (key.textContent === EN_LAYOUT[k]) {
               key.textContent = RU_LAYOUT[k];
             }
           }
@@ -194,7 +286,7 @@ class Model {
         KEYS.forEach((key) => {
           for (let k in RU_LAYOUT) {
             if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
-              key.textContent = k.toUpperCase();
+              key.textContent = EN_LAYOUT[k].toUpperCase();
             }
           }
         });
@@ -202,7 +294,7 @@ class Model {
         KEYS.forEach((key) => {
           for (let k in RU_LAYOUT) {
             if (key.textContent === RU_LAYOUT[k]) {
-              key.textContent = k;
+              key.textContent = EN_LAYOUT[k];
             }
           }
         });
@@ -351,13 +443,6 @@ class Model {
       T_AREA.focus();
       e.preventDefault();
 
-      // if (this.capsLock && !caps_on) {
-      //   caps_on = true;
-      // } else if (!this.capsLock && caps_on) {
-      //   caps_on = false;
-      //   console.log(e.getModifierState('CapsLock'))
-      // }
-
       KEYS.forEach((key) => {
         if (e.key.toLowerCase() === key.textContent.toLowerCase()) {
           key.classList.add('active');
@@ -412,7 +497,7 @@ class Model {
         }
       });
 
-      switch (e.key) {
+      switch (e.code) {
         case 'Backspace':
           if (cursorPos === 0) break;
           str_1 = T_AREA.value.slice(0, cursorPos - 1);
@@ -451,14 +536,14 @@ class Model {
           cursorPos = str_1.length + 1;
           break;
 
-        case ' ':
+        case 'Space':
           str_1 = T_AREA.value.slice(0, cursorPos);
           str_2 = T_AREA.value.slice(cursorPos);
           T_AREA.value = str_1 + ' ' + str_2;
           cursorPos += 1;
           break;
 
-        case 'Shift':
+        case 'ShiftLeft':
           if (e.repeat != undefined) {
             this.allowed = !e.repeat;
           }
@@ -468,8 +553,19 @@ class Model {
           CAPS.classList.toggle('keyboard__key-active', this.capsLock);
           this.pressShift();
           break;
+        
+          case 'ShiftRight':
+            if (e.repeat != undefined) {
+              this.allowed = !e.repeat;
+            }
+            if (!this.allowed) return;
+            this.allowed = false;
+            this.toggleCaps();
+            CAPS.classList.toggle('keyboard__key-active', this.capsLock);
+            this.pressShift();
+            break;
 
-        case 'Control':
+        case 'ControlLeft':
           if (e.repeat != undefined) {
             this.allowed = !e.repeat;
           }
@@ -477,10 +573,26 @@ class Model {
           this.allowed = false;
           break;
 
-        case 'Meta':
+        case 'ControlRight':
+          if (e.repeat != undefined) {
+            this.allowed = !e.repeat;
+          }
+          if (!this.allowed) return;
+          this.allowed = false;
           break;
 
-        case 'Alt':
+        case 'MetaLeft':
+          break;
+
+        case 'AltLeft':
+          if (e.repeat != undefined) {
+            this.allowed = !e.repeat;
+          }
+          if (!this.allowed) return;
+          this.allowed = false;
+          break;
+
+        case 'AltLRight':
           if (e.repeat != undefined) {
             this.allowed = !e.repeat;
           }
@@ -519,33 +631,43 @@ class Model {
         default:
           str_1 = T_AREA.value.slice(0, cursorPos);
           str_2 = T_AREA.value.slice(cursorPos);
+          console.log(this.shift);
+
           if (this.en) {
-            if (this.capsLock) {
-              T_AREA.value = str_1 + e.key.toUpperCase() + str_2;
-            } else {
-              T_AREA.value = str_1 + e.key + str_2;
+            for (let k in EN_LAYOUT) {
+              if (e.code === k) {
+                if (this.capsLock) {
+                  T_AREA.value = str_1 + EN_LAYOUT[k].toUpperCase() + str_2;
+                } else {
+                  T_AREA.value = str_1 + EN_LAYOUT[k] + str_2;
+                }
+              }
+            }
+            if (this.shift) {
+              for (let k in EN_SHIFT_LAYOUT) {
+                console.log(e.code)
+                if (e.code === k) {
+                  console.log('yes')
+                  T_AREA.value = str_1 + EN_SHIFT_LAYOUT[k] + str_2;
+                }
+              }
             }
           } else {
-            let char;
             for (let k in RU_LAYOUT) {
-              if (e.key.toLowerCase() === k) {
-                char = RU_LAYOUT[k];
+              if (e.code === k) {
                 if (this.capsLock) {
-                  T_AREA.value = str_1 + char.toUpperCase() + str_2;
+                  T_AREA.value = str_1 + RU_LAYOUT[k].toUpperCase() + str_2;
                 } else {
-                  T_AREA.value = str_1 + char + str_2;
+                  T_AREA.value = str_1 + RU_LAYOUT[k] + str_2;
                 }
-                break;
-              } else {
-                if (this.capsLock) {
-                  for (let m in RU_SHIFT_ALT_LAYOUT) {
-                    if (e.key === m) {
-                      console.log(e.key)
-                      T_AREA.value = str_1 + RU_SHIFT_ALT_LAYOUT[m] + str_2;
-                    }
-                  }
-                } else {
-                  T_AREA.value = str_1 + e.key + str_2;
+              }
+            }
+            if (this.shift) {
+              for (let k in RU_SHIFT_LAYOUT) {
+                console.log(e.code)
+                if (e.code === k) {
+                  console.log('yes')
+                  T_AREA.value = str_1 + RU_SHIFT_LAYOUT[k] + str_2;
                 }
               }
             }
