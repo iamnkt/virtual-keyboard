@@ -106,6 +106,10 @@ class Layout {
         keyElement.textContent = 'Ctrl';
       };
 
+      if (key === '.') {
+        keyElement.classList.add('keyboard__key-dot');
+      }
+
       FRAGMENT.appendChild(keyElement);
 
       if (insertLineBreak) {

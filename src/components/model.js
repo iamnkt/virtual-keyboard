@@ -49,22 +49,66 @@ const RU_LAYOUT = {
   '\'': 'э',
   'z': 'я',
   'x': 'ч',
-  'z': 'я',
-  'c': 'ч',
-  'v': 'с',
-  'b': 'м',
-  'n': 'и',
-  'm': 'т',
-  ',': 'ь',
-  '.': 'б',
-  '/': 'ю',
+  'c': 'с',
+  'v': 'м',
+  'b': 'и',
+  'n': 'т',
+  'm': 'ь',
+  ',': 'б',
+  '.': 'ю',
+  '/': '.',
 }
+
+const RU_ALT_LAYOUT = {
+  '1': '!',
+  '2': '"',
+  '3': '№',
+  '4': ';',
+  '5': '%',
+  '6': ':',
+  '7': '?',
+  '8': '*',
+  '9': '(',
+  '0': ')',
+  '-': '_',
+  '=': '+',
+  '\\': '/',
+  '.': ',',
+};
+
+const RU_SHIFT_ALT_LAYOUT = {
+  '!': '!',
+  '%': '%',
+  '*': '*',
+  "(": '(',
+  ')': ')',
+  '_': '_',
+  '+': '+',
+  '~': 'Ё',
+  '@': '"',
+  '#': '№',
+  '$': ';',
+  '5': '%',
+  '^': ':',
+  '&': '?',
+  '{': 'Х',
+  '}': 'Ъ',
+  '|': '/',
+  ':': 'Ж',
+  '"': 'Э',
+  '<': 'Б',
+  '>': 'Ю',
+  '?': ',',
+};
+
+const ARR_KEYS = [];
 
 class Model {
   constructor() {
     this.str = '';
     this.capsLock = false;
     this.allowed = true;
+    this.en = true;
   }
 
   toggleCaps() {
@@ -81,49 +125,90 @@ class Model {
   pressShift() {
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
 
-    KEYS.forEach((key) => {
-      for (let k in ALT_LAYOUT) {
-        if (key.textContent === k) {
-          key.textContent = ALT_LAYOUT[k];
+    if (this.en) {
+      KEYS.forEach((key) => {
+        for (let k in ALT_LAYOUT) {
+          if (key.textContent === k) {
+            key.textContent = ALT_LAYOUT[k];
+          }
         }
-      }
-    });
+      });
+    } else {
+      KEYS.forEach((key) => {
+        for (let k in RU_ALT_LAYOUT) {
+          if (key.textContent === k) {
+            key.textContent = RU_ALT_LAYOUT[k];
+          }
+        }
+      });
+    }
   }
 
   unpressShift() {
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
-
-    KEYS.forEach((key) => {
-      for (let k in ALT_LAYOUT) {
-        if (key.textContent === ALT_LAYOUT[k]) {
-          key.textContent = k;
+    
+    if (this.en) {
+      KEYS.forEach((key) => {
+        for (let k in ALT_LAYOUT) {
+          if (key.textContent === ALT_LAYOUT[k]) {
+            key.textContent = k;
+          }
         }
-      }
-    });
+      });
+    } else {
+      KEYS.forEach((key) => {
+        for (let k in RU_ALT_LAYOUT) {
+          if (key.textContent === RU_ALT_LAYOUT[k]) {
+            key.textContent = k;
+          }
+        }
+      });
+    }
+
   }
 
-  changeLangRu() {
+  changeLang() {
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
 
-    KEYS.forEach((key) => {
-      for (let k in RU_LAYOUT) {
-        if (key.textContent === k) {
-          key.textContent = RU_LAYOUT[k];
-        }
+    if (this.en) {
+      if (this.capsLock) {
+        KEYS.forEach((key) => {
+          for (let k in RU_LAYOUT) {
+            if (key.textContent.toLowerCase() === k) {
+              key.textContent = RU_LAYOUT[k].toUpperCase();
+            }
+          }
+        });
+      } else {
+        KEYS.forEach((key) => {
+          for (let k in RU_LAYOUT) {
+            if (key.textContent === k) {
+              key.textContent = RU_LAYOUT[k];
+            }
+          }
+        });
       }
-    });
-  }
 
-  changeLangEn() {
-    const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
-
-    KEYS.forEach((key) => {
-      for (let k in RU_LAYOUT) {
-        if (key.textContent === RU_LAYOUT[k]) {
-          key.textContent = k;
-        }
+    } else {
+      if (this.capsLock) {
+        KEYS.forEach((key) => {
+          for (let k in RU_LAYOUT) {
+            if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
+              key.textContent = k.toUpperCase();
+            }
+          }
+        });
+      } else {
+        KEYS.forEach((key) => {
+          for (let k in RU_LAYOUT) {
+            if (key.textContent === RU_LAYOUT[k]) {
+              key.textContent = k;
+            }
+          }
+        });
+        document.querySelector('.keyboard__key-dot').textContent = '.';
       }
-    });
+    }
   }
 
   init() {
@@ -245,7 +330,6 @@ class Model {
     });
 
     document.addEventListener('mouseup', (e) => {
-      const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
       KEYS.forEach((key) => {
         if (key.classList.contains('active')) {
           key.classList.remove('active');
@@ -273,8 +357,6 @@ class Model {
       //   caps_on = false;
       //   console.log(e.getModifierState('CapsLock'))
       // }
-      
-
 
       KEYS.forEach((key) => {
         if (e.key.toLowerCase() === key.textContent.toLowerCase()) {
@@ -388,12 +470,22 @@ class Model {
           break;
 
         case 'Control':
+          if (e.repeat != undefined) {
+            this.allowed = !e.repeat;
+          }
+          if (!this.allowed) return;
+          this.allowed = false;
           break;
 
         case 'Meta':
           break;
 
         case 'Alt':
+          if (e.repeat != undefined) {
+            this.allowed = !e.repeat;
+          }
+          if (!this.allowed) return;
+          this.allowed = false;
           break;
 
         case 'ArrowUp':
@@ -427,14 +519,41 @@ class Model {
         default:
           str_1 = T_AREA.value.slice(0, cursorPos);
           str_2 = T_AREA.value.slice(cursorPos);
-          if (this.capsLock) {
-            T_AREA.value = str_1 + e.key.toUpperCase() + str_2;
+          if (this.en) {
+            if (this.capsLock) {
+              T_AREA.value = str_1 + e.key.toUpperCase() + str_2;
+            } else {
+              T_AREA.value = str_1 + e.key + str_2;
+            }
           } else {
-            T_AREA.value = str_1 + e.key + str_2;
+            let char;
+            for (let k in RU_LAYOUT) {
+              if (e.key.toLowerCase() === k) {
+                char = RU_LAYOUT[k];
+                if (this.capsLock) {
+                  T_AREA.value = str_1 + char.toUpperCase() + str_2;
+                } else {
+                  T_AREA.value = str_1 + char + str_2;
+                }
+                break;
+              } else {
+                if (this.capsLock) {
+                  for (let m in RU_SHIFT_ALT_LAYOUT) {
+                    if (e.key === m) {
+                      console.log(e.key)
+                      T_AREA.value = str_1 + RU_SHIFT_ALT_LAYOUT[m] + str_2;
+                    }
+                  }
+                } else {
+                  T_AREA.value = str_1 + e.key + str_2;
+                }
+              }
+            }
           }
           cursorPos += 1;
       }
 
+      ARR_KEYS.push(e.code)
       this.str = T_AREA.value;
       T_AREA.selectionStart = T_AREA.selectionEnd = cursorPos;
     });
@@ -443,6 +562,14 @@ class Model {
       let cursorPos = T_AREA.selectionStart;
       T_AREA.focus();
       e.preventDefault();
+
+      if (ARR_KEYS.length === 2) {
+        if (ARR_KEYS.includes('ControlLeft') && ARR_KEYS.includes('AltLeft')) {
+          this.changeLang();
+          this.en = !this.en;
+        };
+      };
+
       KEYS.forEach((key) => {
         if (e.key.toLowerCase() === key.textContent.toLowerCase()) {
           key.classList.remove('active');
@@ -490,6 +617,8 @@ class Model {
       } else if (e.key === 'CapsLock') {
         this.allowed = true;
       }
+
+      ARR_KEYS.length = 0; 
     });
   }
 }
