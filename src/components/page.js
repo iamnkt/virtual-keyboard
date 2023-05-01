@@ -9,7 +9,7 @@ class Page {
 
     TITLE.classList.add('title');
     TITLE.textContent = 'RSS Virtual Keyboard';
-    T_AREA.setAttribute('placeholder', 'Please, type some text');
+    T_AREA.setAttribute('placeholder', 'Please, type any text');
     T_AREA.classList.add('t_area');
     MAIN.classList.add('keyboard');
     KEYS_CONTAINER.classList.add('keyboard__keys');

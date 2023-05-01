@@ -8,7 +8,7 @@ class Layout {
       'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'del',
       'caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', 'enter',
       'shiftLeft', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'arrowUp', 'shiftRight',
-      'ctrlLeft', 'win', 'alt', 'space', 'alt', 'arrowLeft', 'arrowDown', 'arrowRight', 'ctrlRight'
+      'ctrlLeft', 'win', 'altLeft', 'space', 'altRight', 'arrowLeft', 'arrowDown', 'arrowRight', 'ctrlRight'
     ];
 
     const createIconHTML = (name) => {
@@ -51,6 +51,7 @@ class Layout {
 
       if (key === 'shiftLeft') {
         keyElement.classList.add('keyboard__key-extrawide');
+        keyElement.classList.add('keyboard__key-shift_left');
         keyElement.textContent = 'Shift';
       };
 
@@ -60,10 +61,12 @@ class Layout {
 
       if (key === 'shiftRight') {
         keyElement.classList.add('keyboard__key-wide');
+        keyElement.classList.add('keyboard__key-shift_right');
         keyElement.textContent = 'Shift';
       };
 
       if (key === 'ctrlLeft') {
+        keyElement.classList.add('keyboard__key-ctrl_left');
         keyElement.textContent = 'Ctrl';
       };
 
@@ -71,7 +74,8 @@ class Layout {
         keyElement.textContent = 'Win';
       };
 
-      if (key === 'alt') {
+      if (key === 'altLeft') {
+        keyElement.classList.add('keyboard__key-alt_left')
         keyElement.textContent = 'Alt';
       };
 
@@ -79,6 +83,11 @@ class Layout {
         keyElement.classList.add('keyboard__key-space');
         keyElement.textContent = '';
       }
+
+      if (key === 'altRight') {
+        keyElement.classList.add('keyboard__key-alt_right')
+        keyElement.textContent = 'Alt';
+      };
 
       if (key === 'arrowLeft') {
         keyElement.innerHTML = createIconHTML('keyboard_arrow_left');
@@ -93,6 +102,7 @@ class Layout {
       };
 
       if (key === 'ctrlRight') {
+        keyElement.classList.add('keyboard__key-ctrl_right');
         keyElement.textContent = 'Ctrl';
       };
 
