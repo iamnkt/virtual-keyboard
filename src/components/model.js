@@ -1,162 +1,162 @@
 const RU_LAYOUT = {
-  'Backquote': 'ё',
-  'Digit1': '1',
-  'Digit2': '2',
-  'Digit3': '3',
-  'Digit4': '4',
-  'Digit5': '5',
-  'Digit6': '6',
-  'Digit7': '7',
-  'Digit8': '8',
-  'Digit9': '9',
-  'Digit0': '0',
-  'Minus': '-',
-  'Equal': '=',
-  'KeyQ': 'й',
-  'KeyW': 'ц',
-  'KeyE': 'у',
-  'KeyR': 'к',
-  'KeyT': 'е',
-  'KeyY': 'н',
-  'KeyU': 'г',
-  'KeyI': 'ш',
-  'KeyO': 'щ',
-  'KeyP': 'з',
-  'BracketLeft': 'х',
-  'BracketRight': 'ъ',
-  'Backslash': '\\',
-  'KeyA': 'ф',
-  'KeyS': 'ы',
-  'KeyD': 'в',
-  'KeyF': 'а',
-  'KeyG': 'п',
-  'KeyH': 'р',
-  'KeyJ': 'о',
-  'KeyK': 'л',
-  'KeyL': 'д',
-  'Semicolon': 'ж',
-  'Quote': 'э',
-  'KeyZ': 'я',
-  'KeyX': 'ч',
-  'KeyC': 'с',
-  'KeyV': 'м',
-  'KeyB': 'и',
-  'KeyN': 'т',
-  'KeyM': 'ь',
-  'Comma': 'б',
-  'Period': 'ю',
-  'Slash': '.',
-}
+  Backquote: 'ё',
+  Digit1: '1',
+  Digit2: '2',
+  Digit3: '3',
+  Digit4: '4',
+  Digit5: '5',
+  Digit6: '6',
+  Digit7: '7',
+  Digit8: '8',
+  Digit9: '9',
+  Digit0: '0',
+  Minus: '-',
+  Equal: '=',
+  KeyQ: 'й',
+  KeyW: 'ц',
+  KeyE: 'у',
+  KeyR: 'к',
+  KeyT: 'е',
+  KeyY: 'н',
+  KeyU: 'г',
+  KeyI: 'ш',
+  KeyO: 'щ',
+  KeyP: 'з',
+  BracketLeft: 'х',
+  BracketRight: 'ъ',
+  Backslash: '\\',
+  KeyA: 'ф',
+  KeyS: 'ы',
+  KeyD: 'в',
+  KeyF: 'а',
+  KeyG: 'п',
+  KeyH: 'р',
+  KeyJ: 'о',
+  KeyK: 'л',
+  KeyL: 'д',
+  Semicolon: 'ж',
+  Quote: 'э',
+  KeyZ: 'я',
+  KeyX: 'ч',
+  KeyC: 'с',
+  KeyV: 'м',
+  KeyB: 'и',
+  KeyN: 'т',
+  KeyM: 'ь',
+  Comma: 'б',
+  Period: 'ю',
+  Slash: '.',
+};
 
 const EN_LAYOUT = {
-  'Backquote': '`',
-  'Digit1': '1',
-  'Digit2': '2',
-  'Digit3': '3',
-  'Digit4': '4',
-  'Digit5': '5',
-  'Digit6': '6',
-  'Digit7': '7',
-  'Digit8': '8',
-  'Digit9': '9',
-  'Digit0': '0',
-  'Minus': '-',
-  'Equal': '=',
-  'KeyQ': 'q',
-  'KeyW': 'w',
-  'KeyE': 'e',
-  'KeyR': 'r',
-  'KeyT': 't',
-  'KeyY': 'y',
-  'KeyU': 'u',
-  'KeyI': 'i',
-  'KeyO': 'o',
-  'KeyP': 'p',
-  'BracketLeft': '[',
-  'BracketRight': ']',
-  'Backslash': '\\',
-  'KeyA': 'a',
-  'KeyS': 's',
-  'KeyD': 'd',
-  'KeyF': 'f',
-  'KeyG': 'g',
-  'KeyH': 'h',
-  'KeyJ': 'j',
-  'KeyK': 'k',
-  'KeyL': 'l',
-  'Semicolon': ';',
-  'Quote': '\'',
-  'KeyZ': 'z',
-  'KeyX': 'x',
-  'KeyC': 'c',
-  'KeyV': 'v',
-  'KeyB': 'b',
-  'KeyN': 'n',
-  'KeyM': 'm',
-  'Comma': ',',
-  'Period': '.',
-  'Slash': '/',
-}
+  Backquote: '`',
+  Digit1: '1',
+  Digit2: '2',
+  Digit3: '3',
+  Digit4: '4',
+  Digit5: '5',
+  Digit6: '6',
+  Digit7: '7',
+  Digit8: '8',
+  Digit9: '9',
+  Digit0: '0',
+  Minus: '-',
+  Equal: '=',
+  KeyQ: 'q',
+  KeyW: 'w',
+  KeyE: 'e',
+  KeyR: 'r',
+  KeyT: 't',
+  KeyY: 'y',
+  KeyU: 'u',
+  KeyI: 'i',
+  KeyO: 'o',
+  KeyP: 'p',
+  BracketLeft: '[',
+  BracketRight: ']',
+  Backslash: '\\',
+  KeyA: 'a',
+  KeyS: 's',
+  KeyD: 'd',
+  KeyF: 'f',
+  KeyG: 'g',
+  KeyH: 'h',
+  KeyJ: 'j',
+  KeyK: 'k',
+  KeyL: 'l',
+  Semicolon: ';',
+  Quote: '\'',
+  KeyZ: 'z',
+  KeyX: 'x',
+  KeyC: 'c',
+  KeyV: 'v',
+  KeyB: 'b',
+  KeyN: 'n',
+  KeyM: 'm',
+  Comma: ',',
+  Period: '.',
+  Slash: '/',
+};
 
 const EN_SHIFT_LAYOUT = {
-  'Backquote': '~',
-  'Digit1': '!',
-  'Digit2': '@',
-  'Digit3': '#',
-  'Digit4': '$',
-  'Digit5': '%',
-  'Digit6': '^',
-  'Digit7': '&',
-  'Digit8': '*',
-  'Digit9': '(',
-  'Digit0': ')',
-  'Minus': '_',
-  'Equal': '+',
-  'BracketLeft': '{',
-  'BracketRight': '}',
-  'Backslash': '|',
-  'Semicolon': ':',
-  'Quote': '\"',
-  'Comma': '<',
-  'Period': '>',
-  'Slash': '?',
+  Backquote: '~',
+  Digit1: '!',
+  Digit2: '@',
+  Digit3: '#',
+  Digit4: '$',
+  Digit5: '%',
+  Digit6: '^',
+  Digit7: '&',
+  Digit8: '*',
+  Digit9: '(',
+  Digit0: ')',
+  Minus: '_',
+  Equal: '+',
+  BracketLeft: '{',
+  BracketRight: '}',
+  Backslash: '|',
+  Semicolon: ':',
+  Quote: '"',
+  Comma: '<',
+  Period: '>',
+  Slash: '?',
 };
 
 const EN_ALT_LAYOUT = {
   '`': '~',
-  '1': '!',
-  '2': '@',
-  '3': '#',
-  '4': '$',
-  '5': '%',
-  '6': '^',
-  '7': '&',
-  '8': '*',
-  '9': '(',
-  '0': ')',
+  1: '!',
+  2: '@',
+  3: '#',
+  4: '$',
+  5: '%',
+  6: '^',
+  7: '&',
+  8: '*',
+  9: '(',
+  0: ')',
   '-': '_',
   '=': '+',
   '[': '{',
   ']': '}',
   '\\': '|',
   ';': ':',
-  '\'': '\"',
+  '\'': '"',
   ',': '<',
   '.': '>',
   '/': '?',
 };
 
 const RU_ALT_LAYOUT = {
-  '1': '!',
-  '2': '"',
-  '3': '№',
-  '4': ';',
-  '5': '%',
-  '6': ':',
-  '7': '?',
-  '8': '*',
-  '9': '(',
-  '0': ')',
+  1: '!',
+  2: '"',
+  3: '№',
+  4: ';',
+  5: '%',
+  6: ':',
+  7: '?',
+  8: '*',
+  9: '(',
+  0: ')',
   '-': '_',
   '=': '+',
   '\\': '/',
@@ -164,29 +164,27 @@ const RU_ALT_LAYOUT = {
 };
 
 const RU_SHIFT_LAYOUT = {
-  'Backquote': 'Ё',
-  'Digit1': '!',
-  'Digit2': '"',
-  'Digit3': '№',
-  'Digit4': ';',
-  'Digit5': '%',
-  'Digit6': ':',
-  'Digit7': '?',
-  'Digit8': '*',
-  'Digit9': '(',
-  'Digit8': '*',
-  'Digit9': '(',
-  'Digit0': ')',
-  'Minus': '_',
-  'Equal': '+',
-  'BracketLeft': 'Х',
-  'BracketRight': 'Ъ',
-  'Backslash': '/',
-  'Semicolon': 'Ж',
-  'Quote': 'Э',
-  'Comma': 'Б',
-  'Period': 'Ю',
-  'Slash': ',',
+  Backquote: 'Ё',
+  Digit1: '!',
+  Digit2: '"',
+  Digit3: '№',
+  Digit4: ';',
+  Digit5: '%',
+  Digit6: ':',
+  Digit7: '?',
+  Digit8: '*',
+  Digit9: '(',
+  Digit0: ')',
+  Minus: '_',
+  Equal: '+',
+  BracketLeft: 'Х',
+  BracketRight: 'Ъ',
+  Backslash: '/',
+  Semicolon: 'Ж',
+  Quote: 'Э',
+  Comma: 'Б',
+  Period: 'Ю',
+  Slash: ',',
 };
 
 const ARR_KEYS = [];
@@ -212,19 +210,23 @@ class Model {
     this.capsLock = !this.capsLock;
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
 
-    for (let key of KEYS) {
+    KEYS.forEach((key) => {
       if (key.textContent.length === 1) {
-        key.textContent = this.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
-      };
-    };
-  };
+        if (this.capsLock) {
+          key.textContent = key.textContent.toUpperCase();
+        } else {
+          key.textContent = key.textContent.toLowerCase();
+        }
+      }
+    });
+  }
 
   pressShift() {
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
 
     if (this.en) {
       KEYS.forEach((key) => {
-        for (let k in EN_ALT_LAYOUT) {
+        for (const k in EN_ALT_LAYOUT) {
           if (key.textContent === k) {
             key.textContent = EN_ALT_LAYOUT[k];
           }
@@ -232,7 +234,7 @@ class Model {
       });
     } else {
       KEYS.forEach((key) => {
-        for (let k in RU_ALT_LAYOUT) {
+        for (const k in RU_ALT_LAYOUT) {
           if (key.textContent === k) {
             key.textContent = RU_ALT_LAYOUT[k];
           }
@@ -245,10 +247,10 @@ class Model {
 
   unpressShift() {
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
-    
+
     if (this.en) {
       KEYS.forEach((key) => {
-        for (let k in EN_ALT_LAYOUT) {
+        for (const k in EN_ALT_LAYOUT) {
           if (key.textContent === EN_ALT_LAYOUT[k]) {
             key.textContent = k;
           }
@@ -256,7 +258,7 @@ class Model {
       });
     } else {
       KEYS.forEach((key) => {
-        for (let k in RU_ALT_LAYOUT) {
+        for (const k in RU_ALT_LAYOUT) {
           if (key.textContent === RU_ALT_LAYOUT[k]) {
             key.textContent = k;
           }
@@ -273,7 +275,7 @@ class Model {
     if (this.en) {
       if (this.capsLock) {
         KEYS.forEach((key) => {
-          for (let k in EN_LAYOUT) {
+          for (const k in EN_LAYOUT) {
             if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
               key.textContent = RU_LAYOUT[k].toUpperCase();
             }
@@ -281,33 +283,30 @@ class Model {
         });
       } else {
         KEYS.forEach((key) => {
-          for (let k in EN_LAYOUT) {
+          for (const k in EN_LAYOUT) {
             if (key.textContent === EN_LAYOUT[k]) {
               key.textContent = RU_LAYOUT[k];
             }
           }
         });
       }
-
+    } else if (this.capsLock) {
+      KEYS.forEach((key) => {
+        for (const k in RU_LAYOUT) {
+          if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
+            key.textContent = EN_LAYOUT[k].toUpperCase();
+          }
+        }
+      });
     } else {
-      if (this.capsLock) {
-        KEYS.forEach((key) => {
-          for (let k in RU_LAYOUT) {
-            if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
-              key.textContent = EN_LAYOUT[k].toUpperCase();
-            }
+      KEYS.forEach((key) => {
+        for (const k in RU_LAYOUT) {
+          if (key.textContent === RU_LAYOUT[k]) {
+            key.textContent = EN_LAYOUT[k];
           }
-        });
-      } else {
-        KEYS.forEach((key) => {
-          for (let k in RU_LAYOUT) {
-            if (key.textContent === RU_LAYOUT[k]) {
-              key.textContent = EN_LAYOUT[k];
-            }
-          }
-        });
-        document.querySelector('.keyboard__key-dot').textContent = '.';
-      }
+        }
+      });
+      document.querySelector('.keyboard__key-dot').textContent = '.';
     }
   }
 
@@ -321,20 +320,20 @@ class Model {
     const ARROW_DOWN = document.createTextNode('\u2193');
 
     if (LANG === 'ru') {
-      console.log(LANG)
+      console.log(LANG);
       KEYS.forEach((key) => {
-        for (let k in EN_LAYOUT) {
+        for (const k in EN_LAYOUT) {
           if (key.textContent === EN_LAYOUT[k]) {
             key.textContent = RU_LAYOUT[k];
           }
         }
       });
-    } 
+    }
 
     KEYS.forEach((key) => {
       key.addEventListener('mousedown', () => {
         const CAPS = document.querySelector('.keyboard__key-activatable');
-        let value = key.textContent.toLowerCase();
+        const value = key.textContent.toLowerCase();
         let cursorPos = T_AREA.selectionStart;
         let str_1;
         let str_2;
@@ -352,7 +351,7 @@ class Model {
           case 'tab':
             str_1 = this.str.slice(0, cursorPos);
             str_2 = this.str.slice(cursorPos);
-            this.str = str_1 + '    ' + str_2;
+            this.str = `${str_1}    ${str_2}`;
             cursorPos += 4;
             break;
 
@@ -370,14 +369,14 @@ class Model {
           case 'enter':
             str_1 = this.str.slice(0, cursorPos);
             str_2 = this.str.slice(cursorPos);
-            this.str = str_1 + '\n' + str_2;
+            this.str = `${str_1}\n${str_2}`;
             cursorPos = str_1.length + 1;
             break;
 
           case '':
             str_1 = this.str.slice(0, cursorPos);
             str_2 = this.str.slice(cursorPos);
-            this.str = str_1 + ' ' + str_2;
+            this.str = `${str_1} ${str_2}`;
             cursorPos += 1;
             break;
 
@@ -456,125 +455,125 @@ class Model {
 
     document.addEventListener('keydown', (e) => {
       const CAPS = document.querySelector('.keyboard__key-activatable');
-      let caps_on = e.getModifierState('CapsLock');
+      const caps_on = e.getModifierState('CapsLock');
       let cursorPos = T_AREA.selectionStart;
       let str_1;
       let str_2;
       T_AREA.focus();
       e.preventDefault();
 
-      for (let k in EN_LAYOUT) {
+      for (const k in EN_LAYOUT) {
         if (e.code === k) {
           KEYS.forEach((key) => {
             if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
               key.classList.add('active');
-            };
+            }
           });
-        };
-      };
+        }
+      }
 
-      for (let k in RU_LAYOUT) {
+      for (const k in RU_LAYOUT) {
         if (e.code === k) {
           KEYS.forEach((key) => {
             if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
               key.classList.add('active');
-            };
+            }
           });
-        };
-      };
+        }
+      }
 
-      for (let k in EN_SHIFT_LAYOUT) {
+      for (const k in EN_SHIFT_LAYOUT) {
         if (e.code === k) {
           KEYS.forEach((key) => {
             if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
               key.classList.add('active');
-            };
+            }
           });
-        };
-      };
+        }
+      }
 
       KEYS.forEach((key) => {
         if (e.code === 'Tab') {
           document.querySelector('.keyboard__key-tab').classList.add('active');
-        };
+        }
 
         if (e.code === 'Backspace') {
           if (key.textContent === 'backspace') {
             key.classList.add('active');
-          };
-        };
+          }
+        }
 
         if (e.key === 'CapsLock') {
           document.querySelector('.keyboard__key-activatable').classList.add('active');
-        };
+        }
 
         if (e.key === 'Delete') {
           document.querySelector('.keyboard__key-del').classList.add('active');
-        };
+        }
 
         if (e.code === 'Enter') {
           if (key.textContent === 'Enter') {
             key.classList.add('active');
-          };
-        };
-        
+          }
+        }
+
         if (e.code === 'ShiftLeft') {
           document.querySelector('.keyboard__key-shift_left').classList.add('active');
-        };
-        
+        }
+
         if (e.code === 'ShiftRight') {
           document.querySelector('.keyboard__key-shift_right').classList.add('active');
-        };
-        
+        }
+
         if (e.code === 'ControlLeft') {
           document.querySelector('.keyboard__key-ctrl_left').classList.add('active');
-        };
-        
+        }
+
         if (e.code === 'ControlRight') {
           document.querySelector('.keyboard__key-ctrl_right').classList.add('active');
-        };
+        }
 
         if (e.code === 'AltLeft') {
           document.querySelector('.keyboard__key-alt_left').classList.add('active');
-        };
-        
+        }
+
         if (e.code === 'AltRight') {
           document.querySelector('.keyboard__key-alt_right').classList.add('active');
-        };
+        }
 
         if (e.key === 'Meta') {
           if (key.textContent === 'Win') {
             key.classList.add('active');
           }
-        };
-        
+        }
+
         if (e.key === 'ArrowUp') {
           if (key.textContent === 'keyboard_arrow_up') {
             key.classList.add('active');
           }
-        } 
-        
+        }
+
         if (e.key === 'ArrowLeft') {
           if (key.textContent === 'keyboard_arrow_left') {
             key.classList.add('active');
           }
-        };
-        
+        }
+
         if (e.key === 'ArrowDown') {
           if (key.textContent === 'keyboard_arrow_down') {
             key.classList.add('active');
           }
-        } 
-        
+        }
+
         if (e.key === 'ArrowRight') {
           if (key.textContent === 'keyboard_arrow_right') {
             key.classList.add('active');
           }
-        };
-        
+        }
+
         if (e.key === ' ') {
           document.querySelector('.keyboard__key-space').classList.add('active');
-        };
+        }
       });
 
       switch (e.code) {
@@ -589,7 +588,7 @@ class Model {
         case 'Tab':
           str_1 = T_AREA.value.slice(0, cursorPos);
           str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = str_1 + '    ' + str_2;
+          T_AREA.value = `${str_1}    ${str_2}`;
           cursorPos += 4;
           break;
 
@@ -604,7 +603,7 @@ class Model {
             this.allowed = !e.repeat;
           }
           if (!this.allowed) return;
-          this.allowed = false;   
+          this.allowed = false;
           this.toggleCaps();
           CAPS.classList.toggle('keyboard__key-active');
           break;
@@ -612,14 +611,14 @@ class Model {
         case 'Enter':
           str_1 = T_AREA.value.slice(0, cursorPos);
           str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = str_1 + '\n' + str_2;
+          T_AREA.value = `${str_1}\n${str_2}`;
           cursorPos = str_1.length + 1;
           break;
 
         case 'Space':
           str_1 = T_AREA.value.slice(0, cursorPos);
           str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = str_1 + ' ' + str_2;
+          T_AREA.value = `${str_1} ${str_2}`;
           cursorPos += 1;
           break;
 
@@ -633,17 +632,17 @@ class Model {
           CAPS.classList.toggle('keyboard__key-active', this.capsLock);
           this.pressShift();
           break;
-        
-          case 'ShiftRight':
-            if (e.repeat != undefined) {
-              this.allowed = !e.repeat;
-            }
-            if (!this.allowed) return;
-            this.allowed = false;
-            this.toggleCaps();
-            CAPS.classList.toggle('keyboard__key-active', this.capsLock);
-            this.pressShift();
-            break;
+
+        case 'ShiftRight':
+          if (e.repeat != undefined) {
+            this.allowed = !e.repeat;
+          }
+          if (!this.allowed) return;
+          this.allowed = false;
+          this.toggleCaps();
+          CAPS.classList.toggle('keyboard__key-active', this.capsLock);
+          this.pressShift();
+          break;
 
         case 'ControlLeft':
           if (e.repeat != undefined) {
@@ -713,7 +712,7 @@ class Model {
           str_2 = T_AREA.value.slice(cursorPos);
 
           if (this.en) {
-            for (let k in EN_LAYOUT) {
+            for (const k in EN_LAYOUT) {
               if (e.code === k) {
                 if (this.capsLock) {
                   T_AREA.value = str_1 + EN_LAYOUT[k].toUpperCase() + str_2;
@@ -723,14 +722,14 @@ class Model {
               }
             }
             if (this.shift) {
-              for (let k in EN_SHIFT_LAYOUT) {
+              for (const k in EN_SHIFT_LAYOUT) {
                 if (e.code === k) {
                   T_AREA.value = str_1 + EN_SHIFT_LAYOUT[k] + str_2;
                 }
               }
             }
           } else {
-            for (let k in RU_LAYOUT) {
+            for (const k in RU_LAYOUT) {
               if (e.code === k) {
                 if (this.capsLock) {
                   T_AREA.value = str_1 + RU_LAYOUT[k].toUpperCase() + str_2;
@@ -740,7 +739,7 @@ class Model {
               }
             }
             if (this.shift) {
-              for (let k in RU_SHIFT_LAYOUT) {
+              for (const k in RU_SHIFT_LAYOUT) {
                 if (e.code === k) {
                   T_AREA.value = str_1 + RU_SHIFT_LAYOUT[k] + str_2;
                 }
@@ -750,13 +749,13 @@ class Model {
           cursorPos += 1;
       }
 
-      ARR_KEYS.push(e.code)
+      ARR_KEYS.push(e.code);
       this.str = T_AREA.value;
       T_AREA.selectionStart = T_AREA.selectionEnd = cursorPos;
     });
 
     document.addEventListener('keyup', (e) => {
-      let cursorPos = T_AREA.selectionStart;
+      const cursorPos = T_AREA.selectionStart;
       T_AREA.focus();
       e.preventDefault();
 
@@ -765,121 +764,121 @@ class Model {
           this.changeLang();
           this.en = !this.en;
           this.setLang();
-        };
-      };
+        }
+      }
 
-      for (let k in EN_LAYOUT) {
+      for (const k in EN_LAYOUT) {
         if (e.code === k) {
           KEYS.forEach((key) => {
             if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
               key.classList.remove('active');
-            };
+            }
           });
-        };
-      };
+        }
+      }
 
-      for (let k in RU_LAYOUT) {
+      for (const k in RU_LAYOUT) {
         if (e.code === k) {
           KEYS.forEach((key) => {
             if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
               key.classList.remove('active');
-            };
+            }
           });
-        };
-      };
+        }
+      }
 
-      for (let k in EN_SHIFT_LAYOUT) {
+      for (const k in EN_SHIFT_LAYOUT) {
         if (e.code === k) {
           KEYS.forEach((key) => {
             if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
               key.classList.remove('active');
-            };
+            }
           });
-        };
-      };
+        }
+      }
 
       KEYS.forEach((key) => {
         if (e.code === 'Tab') {
           document.querySelector('.keyboard__key-tab').classList.remove('active');
-        };
-        
+        }
+
         if (e.code === 'Backspace') {
           if (key.textContent === 'backspace') {
             key.classList.remove('active');
-          };
-        };
+          }
+        }
 
         if (e.code === 'CapsLock') {
           document.querySelector('.keyboard__key-activatable').classList.remove('active');
-        };
-        
+        }
+
         if (e.key === 'Delete') {
           document.querySelector('.keyboard__key-del').classList.remove('active');
-        };
-        
+        }
+
         if (e.code === 'Enter') {
           if (key.textContent === 'Enter') {
             key.classList.remove('active');
-          };
-        };
+          }
+        }
 
         if (e.code === 'ShiftLeft') {
           document.querySelector('.keyboard__key-shift_left').classList.remove('active');
-        };
-        
+        }
+
         if (e.code === 'ShiftRight') {
           document.querySelector('.keyboard__key-shift_right').classList.remove('active');
-        };
+        }
 
         if (e.code === 'ControlLeft') {
           document.querySelector('.keyboard__key-ctrl_left').classList.remove('active');
-        };
-        
+        }
+
         if (e.code === 'ControlRight') {
           document.querySelector('.keyboard__key-ctrl_right').classList.remove('active');
-        };
+        }
 
         if (e.code === 'AltLeft') {
           document.querySelector('.keyboard__key-alt_left').classList.remove('active');
-        };
-        
+        }
+
         if (e.code === 'AltRight') {
           document.querySelector('.keyboard__key-alt_right').classList.remove('active');
-        };
-        
+        }
+
         if (e.key === 'Meta') {
           if (key.textContent === 'Win') {
             key.classList.remove('active');
-          };
-        };
-        
+          }
+        }
+
         if (e.key === 'ArrowUp') {
           if (key.textContent === 'keyboard_arrow_up') {
             key.classList.remove('active');
-          };
-        };
+          }
+        }
 
         if (e.key === 'ArrowLeft') {
           if (key.textContent === 'keyboard_arrow_left') {
             key.classList.remove('active');
-          };
-        };
-        
+          }
+        }
+
         if (e.key === 'ArrowDown') {
           if (key.textContent === 'keyboard_arrow_down') {
             key.classList.remove('active');
-          };
-        };
-        
+          }
+        }
+
         if (e.key === 'ArrowRight') {
           if (key.textContent === 'keyboard_arrow_right') {
             key.classList.remove('active');
-          };
-        };
-        
+          }
+        }
+
         if (e.key === ' ') {
           document.querySelector('.keyboard__key-space').classList.remove('active');
-        };
+        }
       });
 
       if (e.key === 'Shift') {
@@ -891,7 +890,7 @@ class Model {
         this.allowed = true;
       }
 
-      ARR_KEYS.length = 0; 
+      ARR_KEYS.length = 0;
     });
   }
 }

@@ -58,6 +58,7 @@ p {
   padding: 0;
   -webkit-tap-highlight-color: transparent;
   position: relative;
+  transition: all .35s
 }
 
 .keyboard__key:hover {

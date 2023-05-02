@@ -12,7 +12,7 @@ class Page {
     TITLE.classList.add('title');
     TITLE.textContent = 'RSS Virtual Keyboard';
     P_1.textContent = 'Keyboard was created for Windows OS';
-    P_2.textContent = 'Press Left CTRL + Left Shift to switch between languages'
+    P_2.textContent = 'Press Left CTRL + Left Shift to switch between languages';
     T_AREA.setAttribute('placeholder', 'Please, type any text');
     T_AREA.classList.add('t_area');
     MAIN.classList.add('keyboard');

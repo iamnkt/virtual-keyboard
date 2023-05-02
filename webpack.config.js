@@ -43,7 +43,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
-      }),
+    }),
   ],
   devServer: {
     watchFiles: path.join(__dirname, 'src'),
