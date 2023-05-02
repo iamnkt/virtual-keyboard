@@ -462,23 +462,17 @@ class Model {
       T_AREA.focus();
       e.preventDefault();
 
-      for (const k in EN_LAYOUT) {
-        if (e.code === k) {
-          KEYS.forEach((key) => {
-            if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
-              key.classList.add('active');
-            }
-          });
-        }
-      }
+      console.log(e.code)
 
-      for (const k in RU_LAYOUT) {
-        if (e.code === k) {
-          KEYS.forEach((key) => {
-            if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
-              key.classList.add('active');
-            }
-          });
+      if (this.en) {
+        for (const k in EN_LAYOUT) {
+          if (e.code === k) {
+            KEYS.forEach((key) => {
+              if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
+                key.classList.add('active');
+              }
+            });
+          }
         }
       }
 
@@ -487,6 +481,18 @@ class Model {
           if (e.code === k) {
             KEYS.forEach((key) => {
               if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
+                key.classList.add('active');
+              }
+            });
+          }
+        }
+      }
+
+      if (!this.en) {
+        for (const k in RU_LAYOUT) {
+          if (e.code === k) {
+            KEYS.forEach((key) => {
+              if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
                 key.classList.add('active');
               }
             });
