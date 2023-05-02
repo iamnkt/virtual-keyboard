@@ -211,11 +211,12 @@ class Model {
     const KEYS = Array.from(document.querySelectorAll('.keyboard__key'));
 
     KEYS.forEach((key) => {
-      if (key.textContent.length === 1) {
+      const btn = key;
+      if (btn.textContent.length === 1) {
         if (this.capsLock) {
-          key.textContent = key.textContent.toUpperCase();
+          btn.textContent = btn.textContent.toUpperCase();
         } else {
-          key.textContent = key.textContent.toLowerCase();
+          btn.textContent = btn.textContent.toLowerCase();
         }
       }
     });
@@ -226,19 +227,21 @@ class Model {
 
     if (this.en) {
       KEYS.forEach((key) => {
-        for (const k in EN_ALT_LAYOUT) {
-          if (key.textContent === k) {
-            key.textContent = EN_ALT_LAYOUT[k];
+        const btn = key;
+        Object.keys(EN_ALT_LAYOUT).forEach((k) => {
+          if (btn.textContent === k) {
+            btn.textContent = EN_ALT_LAYOUT[k];
           }
-        }
+        });
       });
     } else {
       KEYS.forEach((key) => {
-        for (const k in RU_ALT_LAYOUT) {
-          if (key.textContent === k) {
-            key.textContent = RU_ALT_LAYOUT[k];
+        const btn = key;
+        Object.keys(RU_ALT_LAYOUT).forEach((k) => {
+          if (btn.textContent === k) {
+            btn.textContent = RU_ALT_LAYOUT[k];
           }
-        }
+        });
       });
     }
 
@@ -250,19 +253,21 @@ class Model {
 
     if (this.en) {
       KEYS.forEach((key) => {
-        for (const k in EN_ALT_LAYOUT) {
-          if (key.textContent === EN_ALT_LAYOUT[k]) {
-            key.textContent = k;
+        const btn = key;
+        Object.keys(EN_ALT_LAYOUT).forEach((k) => {
+          if (btn.textContent === EN_ALT_LAYOUT[k]) {
+            btn.textContent = k;
           }
-        }
+        });
       });
     } else {
       KEYS.forEach((key) => {
-        for (const k in RU_ALT_LAYOUT) {
-          if (key.textContent === RU_ALT_LAYOUT[k]) {
-            key.textContent = k;
+        const btn = key;
+        Object.keys(RU_ALT_LAYOUT).forEach((k) => {
+          if (btn.textContent === RU_ALT_LAYOUT[k]) {
+            btn.textContent = k;
           }
-        }
+        });
       });
     }
 
@@ -275,36 +280,40 @@ class Model {
     if (this.en) {
       if (this.capsLock) {
         KEYS.forEach((key) => {
-          for (const k in EN_LAYOUT) {
-            if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
-              key.textContent = RU_LAYOUT[k].toUpperCase();
+          const btn = key;
+          Object.keys(EN_LAYOUT).forEach((k) => {
+            if (btn.textContent.toLowerCase() === EN_LAYOUT[k]) {
+              btn.textContent = RU_LAYOUT[k].toUpperCase();
             }
-          }
+          });
         });
       } else {
         KEYS.forEach((key) => {
-          for (const k in EN_LAYOUT) {
-            if (key.textContent === EN_LAYOUT[k]) {
-              key.textContent = RU_LAYOUT[k];
+          const btn = key;
+          Object.keys(EN_LAYOUT).forEach((k) => {
+            if (btn.textContent === EN_LAYOUT[k]) {
+              btn.textContent = RU_LAYOUT[k];
             }
-          }
+          });
         });
       }
     } else if (this.capsLock) {
       KEYS.forEach((key) => {
-        for (const k in RU_LAYOUT) {
-          if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
-            key.textContent = EN_LAYOUT[k].toUpperCase();
+        const btn = key;
+        Object.keys(RU_LAYOUT).forEach((k) => {
+          if (btn.textContent.toLowerCase() === RU_LAYOUT[k]) {
+            btn.textContent = EN_LAYOUT[k].toUpperCase();
           }
-        }
+        });
       });
     } else {
       KEYS.forEach((key) => {
-        for (const k in RU_LAYOUT) {
-          if (key.textContent === RU_LAYOUT[k]) {
-            key.textContent = EN_LAYOUT[k];
+        const btn = key;
+        Object.keys(RU_LAYOUT).forEach((k) => {
+          if (btn.textContent === RU_LAYOUT[k]) {
+            btn.textContent = EN_LAYOUT[k];
           }
-        }
+        });
       });
       document.querySelector('.keyboard__key-dot').textContent = '.';
     }
@@ -320,13 +329,13 @@ class Model {
     const ARROW_DOWN = document.createTextNode('\u2193');
 
     if (LANG === 'ru') {
-      console.log(LANG);
       KEYS.forEach((key) => {
-        for (const k in EN_LAYOUT) {
-          if (key.textContent === EN_LAYOUT[k]) {
-            key.textContent = RU_LAYOUT[k];
+        const btn = key;
+        Object.keys(EN_LAYOUT).forEach((k) => {
+          if (btn.textContent === EN_LAYOUT[k]) {
+            btn.textContent = RU_LAYOUT[k];
           }
-        }
+        });
       });
     }
 
@@ -335,30 +344,30 @@ class Model {
         const CAPS = document.querySelector('.keyboard__key-activatable');
         const value = key.textContent.toLowerCase();
         let cursorPos = T_AREA.selectionStart;
-        let str_1;
-        let str_2;
+        let str1;
+        let str2;
         T_AREA.focus();
 
         switch (value) {
           case 'backspace':
             if (cursorPos === 0) break;
-            str_1 = this.str.slice(0, cursorPos - 1);
-            str_2 = this.str.slice(cursorPos);
-            this.str = str_1 + str_2;
+            str1 = this.str.slice(0, cursorPos - 1);
+            str2 = this.str.slice(cursorPos);
+            this.str = str1 + str2;
             cursorPos -= 1;
             break;
 
           case 'tab':
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos);
-            this.str = `${str_1}    ${str_2}`;
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos);
+            this.str = `${str1}    ${str2}`;
             cursorPos += 4;
             break;
 
           case 'del':
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos + 1);
-            this.str = str_1 + str_2;
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos + 1);
+            this.str = str1 + str2;
             break;
 
           case 'keyboard_capslock':
@@ -367,16 +376,16 @@ class Model {
             break;
 
           case 'enter':
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos);
-            this.str = `${str_1}\n${str_2}`;
-            cursorPos = str_1.length + 1;
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos);
+            this.str = `${str1}\n${str2}`;
+            cursorPos = str1.length + 1;
             break;
 
           case '':
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos);
-            this.str = `${str_1} ${str_2}`;
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos);
+            this.str = `${str1} ${str2}`;
             cursorPos += 1;
             break;
 
@@ -396,47 +405,48 @@ class Model {
             break;
 
           case 'keyboard_arrow_up':
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos);
-            this.str = str_1 + ARROW_UP.textContent + str_2;
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos);
+            this.str = str1 + ARROW_UP.textContent + str2;
             cursorPos += 1;
             break;
 
           case 'keyboard_arrow_left':
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos);
-            this.str = str_1 + ARROW_LEFT.textContent + str_2;
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos);
+            this.str = str1 + ARROW_LEFT.textContent + str2;
             cursorPos += 1;
             break;
 
           case 'keyboard_arrow_down':
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos);
-            this.str = str_1 + ARROW_DOWN.textContent + str_2;
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos);
+            this.str = str1 + ARROW_DOWN.textContent + str2;
             cursorPos += 1;
             break;
 
           case 'keyboard_arrow_right':
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos);
-            this.str = str_1 + ARROW_RIGHT.textContent + str_2;
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos);
+            this.str = str1 + ARROW_RIGHT.textContent + str2;
             cursorPos += 1;
             break;
 
           default:
-            str_1 = this.str.slice(0, cursorPos);
-            str_2 = this.str.slice(cursorPos);
+            str1 = this.str.slice(0, cursorPos);
+            str2 = this.str.slice(cursorPos);
             if (this.capsLock) {
-              this.str = str_1 + value.toUpperCase() + str_2;
+              this.str = str1 + value.toUpperCase() + str2;
             } else {
-              this.str = str_1 + value + str_2;
+              this.str = str1 + value + str2;
             }
             cursorPos += 1;
         }
 
         key.classList.add('active');
         T_AREA.value = this.str;
-        T_AREA.selectionStart = T_AREA.selectionEnd = cursorPos;
+        T_AREA.selectionStart = cursorPos;
+        T_AREA.selectionEnd = cursorPos;
       });
     });
 
@@ -455,61 +465,62 @@ class Model {
 
     document.addEventListener('keydown', (e) => {
       const CAPS = document.querySelector('.keyboard__key-activatable');
-      const caps_on = e.getModifierState('CapsLock');
       let cursorPos = T_AREA.selectionStart;
-      let str_1;
-      let str_2;
+      let str1;
+      let str2;
       T_AREA.focus();
       e.preventDefault();
 
-      console.log(e.code)
-
       if (this.en) {
-        for (const k in EN_LAYOUT) {
+        Object.keys(EN_LAYOUT).forEach((k) => {
           if (e.code === k) {
             KEYS.forEach((key) => {
-              if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
-                key.classList.add('active');
+              const btn = key;
+              if (btn.textContent.toLowerCase() === EN_LAYOUT[k]) {
+                btn.classList.add('active');
               }
             });
           }
-        }
+        });
       }
 
       if (this.en) {
-        for (const k in EN_SHIFT_LAYOUT) {
+        Object.keys(EN_SHIFT_LAYOUT).forEach((k) => {
           if (e.code === k) {
             KEYS.forEach((key) => {
-              if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
-                key.classList.add('active');
+              const btn = key;
+              if (btn.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
+                btn.classList.add('active');
               }
             });
           }
-        }
+        });
       }
 
       if (!this.en) {
-        for (const k in RU_LAYOUT) {
+        Object.keys(RU_LAYOUT).forEach((k) => {
           if (e.code === k) {
             KEYS.forEach((key) => {
-              if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
-                key.classList.add('active');
+              const btn = key;
+              if (btn.textContent.toLowerCase() === RU_LAYOUT[k]) {
+                btn.classList.add('active');
               }
             });
           }
-        }
+        });
       }
 
       if (!this.en) {
-        for (const k in RU_SHIFT_LAYOUT) {
+        Object.keys(RU_SHIFT_LAYOUT).forEach((k) => {
           if (e.code === k) {
             KEYS.forEach((key) => {
-              if (key.textContent.toLowerCase() === RU_SHIFT_LAYOUT[k]) {
-                key.classList.add('active');
+              const btn = key;
+              if (btn.textContent.toLowerCase() === RU_SHIFT_LAYOUT[k]) {
+                btn.classList.add('active');
               }
             });
           }
-        }
+        });
       }
 
       KEYS.forEach((key) => {
@@ -599,27 +610,27 @@ class Model {
       switch (e.code) {
         case 'Backspace':
           if (cursorPos === 0) break;
-          str_1 = T_AREA.value.slice(0, cursorPos - 1);
-          str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = str_1 + str_2;
+          str1 = T_AREA.value.slice(0, cursorPos - 1);
+          str2 = T_AREA.value.slice(cursorPos);
+          T_AREA.value = str1 + str2;
           cursorPos -= 1;
           break;
 
         case 'Tab':
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = `${str_1}    ${str_2}`;
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos);
+          T_AREA.value = `${str1}    ${str2}`;
           cursorPos += 4;
           break;
 
         case 'Delete':
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos + 1);
-          T_AREA.value = str_1 + str_2;
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos + 1);
+          T_AREA.value = str1 + str2;
           break;
 
         case 'CapsLock':
-          if (e.repeat != undefined) {
+          if (e.repeat !== undefined) {
             this.allowed = !e.repeat;
           }
           if (!this.allowed) return;
@@ -629,21 +640,21 @@ class Model {
           break;
 
         case 'Enter':
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = `${str_1}\n${str_2}`;
-          cursorPos = str_1.length + 1;
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos);
+          T_AREA.value = `${str1}\n${str2}`;
+          cursorPos = str1.length + 1;
           break;
 
         case 'Space':
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = `${str_1} ${str_2}`;
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos);
+          T_AREA.value = `${str1} ${str2}`;
           cursorPos += 1;
           break;
 
         case 'ShiftLeft':
-          if (e.repeat != undefined) {
+          if (e.repeat !== undefined) {
             this.allowed = !e.repeat;
           }
           if (!this.allowed) return;
@@ -654,7 +665,7 @@ class Model {
           break;
 
         case 'ShiftRight':
-          if (e.repeat != undefined) {
+          if (e.repeat !== undefined) {
             this.allowed = !e.repeat;
           }
           if (!this.allowed) return;
@@ -665,7 +676,7 @@ class Model {
           break;
 
         case 'ControlLeft':
-          if (e.repeat != undefined) {
+          if (e.repeat !== undefined) {
             this.allowed = !e.repeat;
           }
           if (!this.allowed) return;
@@ -673,7 +684,7 @@ class Model {
           break;
 
         case 'ControlRight':
-          if (e.repeat != undefined) {
+          if (e.repeat !== undefined) {
             this.allowed = !e.repeat;
           }
           if (!this.allowed) return;
@@ -684,7 +695,7 @@ class Model {
           break;
 
         case 'AltLeft':
-          if (e.repeat != undefined) {
+          if (e.repeat !== undefined) {
             this.allowed = !e.repeat;
           }
           if (!this.allowed) return;
@@ -692,7 +703,7 @@ class Model {
           break;
 
         case 'AltRight':
-          if (e.repeat != undefined) {
+          if (e.repeat !== undefined) {
             this.allowed = !e.repeat;
           }
           if (!this.allowed) return;
@@ -700,70 +711,70 @@ class Model {
           break;
 
         case 'ArrowUp':
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = str_1 + ARROW_UP.textContent + str_2;
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos);
+          T_AREA.value = str1 + ARROW_UP.textContent + str2;
           cursorPos += 1;
           break;
 
         case 'ArrowLeft':
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = str_1 + ARROW_LEFT.textContent + str_2;
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos);
+          T_AREA.value = str1 + ARROW_LEFT.textContent + str2;
           cursorPos += 1;
           break;
 
         case 'ArrowDown':
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = str_1 + ARROW_DOWN.textContent + str_2;
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos);
+          T_AREA.value = str1 + ARROW_DOWN.textContent + str2;
           cursorPos += 1;
           break;
 
         case 'ArrowRight':
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos);
-          T_AREA.value = str_1 + ARROW_RIGHT.textContent + str_2;
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos);
+          T_AREA.value = str1 + ARROW_RIGHT.textContent + str2;
           cursorPos += 1;
           break;
 
         default:
-          str_1 = T_AREA.value.slice(0, cursorPos);
-          str_2 = T_AREA.value.slice(cursorPos);
+          str1 = T_AREA.value.slice(0, cursorPos);
+          str2 = T_AREA.value.slice(cursorPos);
 
           if (this.en) {
-            for (const k in EN_LAYOUT) {
+            Object.keys(EN_LAYOUT).forEach((k) => {
               if (e.code === k) {
                 if (this.capsLock) {
-                  T_AREA.value = str_1 + EN_LAYOUT[k].toUpperCase() + str_2;
+                  T_AREA.value = str1 + EN_LAYOUT[k].toUpperCase() + str2;
                 } else {
-                  T_AREA.value = str_1 + EN_LAYOUT[k] + str_2;
+                  T_AREA.value = str1 + EN_LAYOUT[k] + str2;
                 }
               }
-            }
+            });
             if (this.shift) {
-              for (const k in EN_SHIFT_LAYOUT) {
+              Object.keys(EN_SHIFT_LAYOUT).forEach((k) => {
                 if (e.code === k) {
-                  T_AREA.value = str_1 + EN_SHIFT_LAYOUT[k] + str_2;
+                  T_AREA.value = str1 + EN_SHIFT_LAYOUT[k] + str2;
                 }
-              }
+              });
             }
           } else {
-            for (const k in RU_LAYOUT) {
+            Object.keys(RU_LAYOUT).forEach((k) => {
               if (e.code === k) {
                 if (this.capsLock) {
-                  T_AREA.value = str_1 + RU_LAYOUT[k].toUpperCase() + str_2;
+                  T_AREA.value = str1 + RU_LAYOUT[k].toUpperCase() + str2;
                 } else {
-                  T_AREA.value = str_1 + RU_LAYOUT[k] + str_2;
+                  T_AREA.value = str1 + RU_LAYOUT[k] + str2;
                 }
               }
-            }
+            });
             if (this.shift) {
-              for (const k in RU_SHIFT_LAYOUT) {
+              Object.keys(RU_SHIFT_LAYOUT).forEach((k) => {
                 if (e.code === k) {
-                  T_AREA.value = str_1 + RU_SHIFT_LAYOUT[k] + str_2;
+                  T_AREA.value = str1 + RU_SHIFT_LAYOUT[k] + str2;
                 }
-              }
+              });
             }
           }
           cursorPos += 1;
@@ -771,11 +782,11 @@ class Model {
 
       ARR_KEYS.push(e.code);
       this.str = T_AREA.value;
-      T_AREA.selectionStart = T_AREA.selectionEnd = cursorPos;
+      T_AREA.selectionStart = cursorPos;
+      T_AREA.selectionEnd = cursorPos;
     });
 
     document.addEventListener('keyup', (e) => {
-      const cursorPos = T_AREA.selectionStart;
       T_AREA.focus();
       e.preventDefault();
 
@@ -787,48 +798,52 @@ class Model {
         }
       }
 
-      for (const k in EN_LAYOUT) {
+      Object.keys(EN_LAYOUT).forEach((k) => {
         if (e.code === k) {
           KEYS.forEach((key) => {
-            if (key.textContent.toLowerCase() === EN_LAYOUT[k]) {
-              key.classList.remove('active');
+            const btn = key;
+            if (btn.textContent.toLowerCase() === EN_LAYOUT[k]) {
+              btn.classList.remove('active');
             }
           });
         }
-      }
+      });
 
-      for (const k in RU_LAYOUT) {
+      Object.keys(RU_LAYOUT).forEach((k) => {
         if (e.code === k) {
           KEYS.forEach((key) => {
-            if (key.textContent.toLowerCase() === RU_LAYOUT[k]) {
-              key.classList.remove('active');
+            const btn = key;
+            if (btn.textContent.toLowerCase() === RU_LAYOUT[k]) {
+              btn.classList.remove('active');
             }
           });
         }
-      }
+      });
 
       if (this.en) {
-        for (const k in EN_SHIFT_LAYOUT) {
+        Object.keys(EN_SHIFT_LAYOUT).forEach((k) => {
           if (e.code === k) {
             KEYS.forEach((key) => {
-              if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
-                key.classList.remove('active');
+              const btn = key;
+              if (btn.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
+                btn.classList.remove('active');
               }
             });
           }
-        }
+        });
       }
 
       if (!this.en) {
-        for (const k in RU_SHIFT_LAYOUT) {
+        Object.keys(RU_SHIFT_LAYOUT).forEach((k) => {
           if (e.code === k) {
             KEYS.forEach((key) => {
-              if (key.textContent.toLowerCase() === RU_SHIFT_LAYOUT[k]) {
-                key.classList.remove('active');
+              const btn = key;
+              if (btn.textContent.toLowerCase() === RU_SHIFT_LAYOUT[k]) {
+                btn.classList.remove('active');
               }
             });
           }
-        }
+        });
       }
 
       KEYS.forEach((key) => {

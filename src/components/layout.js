@@ -1,7 +1,7 @@
 import '../styles/style.css';
 
 class Layout {
-  createKeys() {
+  static createKeys() {
     const FRAGMENT = document.createDocumentFragment();
     const KEY_LAYOUT = [
       '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',

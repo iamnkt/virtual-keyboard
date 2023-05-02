@@ -10,8 +10,8 @@ class App {
   }
 
   run() {
-    this.page.createPage();
-    document.querySelector('.keyboard__keys').appendChild(this.layout.createKeys());
+    Page.createPage();
+    document.querySelector('.keyboard__keys').appendChild(Layout.createKeys());
     this.model.init();
   }
 }
