@@ -482,13 +482,27 @@ class Model {
         }
       }
 
-      for (const k in EN_SHIFT_LAYOUT) {
-        if (e.code === k) {
-          KEYS.forEach((key) => {
-            if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
-              key.classList.add('active');
-            }
-          });
+      if (this.en) {
+        for (const k in EN_SHIFT_LAYOUT) {
+          if (e.code === k) {
+            KEYS.forEach((key) => {
+              if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
+                key.classList.add('active');
+              }
+            });
+          }
+        }
+      }
+
+      if (!this.en) {
+        for (const k in RU_SHIFT_LAYOUT) {
+          if (e.code === k) {
+            KEYS.forEach((key) => {
+              if (key.textContent.toLowerCase() === RU_SHIFT_LAYOUT[k]) {
+                key.classList.add('active');
+              }
+            });
+          }
         }
       }
 
@@ -787,13 +801,27 @@ class Model {
         }
       }
 
-      for (const k in EN_SHIFT_LAYOUT) {
-        if (e.code === k) {
-          KEYS.forEach((key) => {
-            if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
-              key.classList.remove('active');
-            }
-          });
+      if (this.en) {
+        for (const k in EN_SHIFT_LAYOUT) {
+          if (e.code === k) {
+            KEYS.forEach((key) => {
+              if (key.textContent.toLowerCase() === EN_SHIFT_LAYOUT[k]) {
+                key.classList.remove('active');
+              }
+            });
+          }
+        }
+      }
+
+      if (!this.en) {
+        for (const k in RU_SHIFT_LAYOUT) {
+          if (e.code === k) {
+            KEYS.forEach((key) => {
+              if (key.textContent.toLowerCase() === RU_SHIFT_LAYOUT[k]) {
+                key.classList.remove('active');
+              }
+            });
+          }
         }
       }
 

@@ -26,14 +26,13 @@ p {
 
 .keyboard {
   position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
+  width: 790px;
   padding: 5px 0;
   background-color: #444444;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   user-select: none;
-  transition: bottom 0.4s;
+  margin: 0 auto;
+  border-radius: 4px;
 }
 
 .keyboard__keys {
