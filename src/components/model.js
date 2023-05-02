@@ -671,7 +671,7 @@ class Model {
           this.allowed = false;
           break;
 
-        case 'AltLRight':
+        case 'AltRight':
           if (e.repeat != undefined) {
             this.allowed = !e.repeat;
           }
